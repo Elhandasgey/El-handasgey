@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة الإنقاذ | الهندسجي فتحي سيد</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Tajawal', sans-serif; scroll-behavior: smooth; background-color: #f8fafc; }
+        .hero-pattern {
+            background-color: #0f172a;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 86c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm66-3c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm-46-43c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm20-27c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        .emergency-card {
+            background: repeating-linear-gradient(45deg, #fffcfc, #fffcfc 10px, #fff5f5 10px, #fff5f5 20px);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="bg-white/90 backdrop-blur-md shadow-lg p-4 sticky top-0 z-50 border-b-2 border-blue-600">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="bg-blue-600 text-white p-2 rounded-lg rotate-3">
+                    <i class="fa-solid fa-calculator text-xl"></i>
+                </div>
+                <h1 class="text-xl font-black text-slate-800">الهندسجي | <span class="text-blue-600">فتحي سيد</span></h1>
+            </div>
+            <div class="hidden md:flex gap-6 font-bold text-slate-600 items-center">
+                <a href="#emergency" class="text-red-600 hover:scale-105 transition flex items-center gap-1">
+                    <span class="relative flex h-3 w-3">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-3 w-3 bg-red-600"></span>
+                    </span>
+                    ركن الطوارئ
+                </a>
+                <a href="#first-sec" class="hover:text-blue-600 transition">أولى ثانوي</a>
+                <a href="#second-sec" class="hover:text-blue-600 transition">تانية ثانوي</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-pattern text-white py-20 px-4 text-center border-b-8 border-orange-500">
+        <div class="container mx-auto">
+            <h2 class="text-5xl md:text-7xl font-black mb-6 tracking-tight">منصة <span class="text-orange-500">الإنقاذ</span> 🚀</h2>
+            <p class="text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto leading-relaxed mb-10">
+                الرياضيات مش بس قوانين، دي متعة وفن. مع <span class="text-white font-bold underline">الهندسجي فتحي سيد</span>، هتقفل المادة وأنت فاهم كل تفصيلة.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <div class="bg-white/10 px-6 py-3 rounded-full border border-white/20 text-sm font-bold">
+                    ✅ شرح مبسط
+                </div>
+                <div class="bg-white/10 px-6 py-3 rounded-full border border-white/20 text-sm font-bold">
+                    ✅ ملازم PDF مجانية
+                </div>
+                <div class="bg-white/10 px-6 py-3 rounded-full border border-white/20 text-sm font-bold">
+                    ✅ تأسيس شامل
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="emergency" class="container mx-auto py-12 px-4">
+        <div class="emergency-card border-2 border-red-500 rounded-3xl overflow-hidden shadow-xl shadow-red-100">
+            <div class="md:flex items-stretch">
+                <div class="bg-red-600 text-white p-10 flex flex-col justify-center items-center text-center md:w-1/4">
+                    <i class="fa-solid fa-triangle-exclamation text-6xl mb-4 animate-bounce"></i>
+                    <h3 class="text-2xl font-black leading-tight">ركن الطوارئ</h3>
+                    <p class="text-red-100 text-sm mt-2 font-bold italic">للمحتاجين تأسيس سريع</p>
+                </div>
+                <div class="p-8 md:p-12 md:w-3/4">
+                    <h4 class="text-2xl font-bold text-slate-800 mb-4">كورس تأسيس الرياضيات الشامل</h4>
+                    <p class="text-slate-600 mb-8 text-lg">
+                        لو عندك مشكلة في الأساسيات (تحليل، قوانين مثلثات، جبر ابتدائي)، القسم ده هو طوق النجاة ليك. لا تبدأ المنهج قبل مشاهدة هذه المحاضرات.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="رابط_محاضرات_التأسيس_هنا" class="bg-red-600 text-white px-8 py-4 rounded-2xl font-bold hover:bg-red-700 transition flex items-center gap-3 shadow-lg shadow-red-200">
+                            <i class="fa-brands fa-youtube text-2xl"></i>
+                            مشاهدة محاضرات الإنقاذ
+                        </a>
+                        <a href="رابط_ملزمة_التأسيس_PDF" class="bg-white border-2 border-red-600 text-red-600 px-8 py-4 rounded-2xl font-bold hover:bg-red-50 transition flex items-center gap-3">
+                            <i class="fa-solid fa-file-pdf text-2xl"></i>
+                            تحميل ملزمة الطوارئ
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="first-sec" class="container mx-auto py-12 px-4">
+        <div class="flex items-center gap-4 mb-10">
+            <div class="h-12 w-3 bg-blue-600 rounded-full"></div>
+            <h3 class="text-3xl font-black text-slate-800">الصف الأول الثانوي <span class="text-blue-600 text-lg block md:inline md:mr-2">| الترم الثاني</span></h3>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-2xl hover:border-blue-300 transition-all group">
+                <div class="h-48 bg-slate-100 flex items-center justify-center relative">
+                    <i class="fa-solid fa-square-root-variable text-6xl text-blue-200 group-hover:scale-110 transition"></i>
+                    <div class="absolute bottom-4 left-4 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-lg">المحاضرة 1</div>
+                </div>
+                <div class="p-6">
+                    <h4 class="font-bold text-xl mb-3 text-slate-800">المصفوفات - الدرس الأول</h4>
+                    <p class="text-slate-500 text-sm mb-6 leading-relaxed">تعريف المصفوفة، أنواعها، وتساوي مصفوفتين بطريقة عبقرية.</p>
+                    <div class="flex gap-2">
+                        <a href="#" class="flex-1 bg-blue-600 text-white text-center py-3 rounded-xl font-bold hover:bg-blue-700 transition">فيديو الشرح</a>
+                        <a href="#" class="bg-slate-100 text-slate-600 px-5 py-3 rounded-xl hover:bg-slate-200 transition" title="تحميل الملزمة"><i class="fa-solid fa-file-arrow-down"></i></a>
+                    </div>
+                </div>
+            </div>
+            </div>
+    </section>
+
+    <section id="second-sec" class="container mx-auto py-12 px-4 bg-slate-50 rounded-[50px]">
+        <div class="flex items-center gap-4 mb-10">
+            <div class="h-12 w-3 bg-orange-500 rounded-full"></div>
+            <h3 class="text-3xl font-black text-slate-800">الصف الثاني الثانوي <span class="text-orange-500 text-lg block md:inline md:mr-2">| الترم الثاني</span></h3>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-2xl hover:border-orange-300 transition-all group">
+                <div class="h-48 bg-orange-50 flex items-center justify-center relative">
+                    <i class="fa-solid fa-chart-line text-6xl text-orange-200 group-hover:scale-110 transition"></i>
+                    <div class="absolute bottom-4 left-4 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-lg">المحاضرة 1</div>
+                </div>
+                <div class="p-6">
+                    <h4 class="font-bold text-xl mb-3 text-slate-800">تفاضل: معدل التغير</h4>
+                    <p class="text-slate-500 text-sm mb-6 leading-relaxed">فهم مفهوم التغير، دالة التغير، ومتوسط التغير وقوانينها.</p>
+                    <div class="flex gap-2">
+                        <a href="#" class="flex-1 bg-orange-500 text-white text-center py-3 rounded-xl font-bold hover:bg-orange-600 transition">فيديو الشرح</a>
+                        <a href="#" class="bg-slate-100 text-slate-600 px-5 py-3 rounded-xl hover:bg-slate-200 transition" title="تحميل الملزمة"><i class="fa-solid fa-file-arrow-down"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-900 text-white py-16 mt-20 border-t-8 border-blue-600">
+        <div class="container mx-auto px-4 text-center">
+            <h4 class="text-3xl font-black mb-2">منصة الإنقاذ</h4>
+            <p class="text-slate-400 mb-8 italic">مع الهندسجي فتحي سيد .. الرياضة في جيبك</p>
+            
+            <div class="flex justify-center gap-8 mb-12">
+                <a href="#" class="text-4xl hover:text-red-600 transition hover:-translate-y-2 inline-block"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#" class="text-4xl hover:text-blue-400 transition hover:-translate-y-2 inline-block"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" class="text-4xl hover:text-blue-300 transition hover:-translate-y-2 inline-block"><i class="fa-brands fa-telegram"></i></a>
+                <a href="#" class="text-4xl hover:text-green-500 transition hover:-translate-y-2 inline-block"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+            
+            <div class="pt-8 border-t border-white/10 text-slate-500 text-sm">
+                حقوق النشر © 2026 - جميع الحقوق محفوظة للهندسجي فتحي سيد
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
