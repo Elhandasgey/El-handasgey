@@ -3,268 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="منصة الإنقاذ التعليمية | مع الهندسجي فتحي سيد. طريقك للدرجة النهائية في الرياضيات يبدأ هنا.">
-    <meta name="author" content="فتحي سيد | الهندسجي">
     <title>منصة الإنقاذ | الهندسجي فتحي سيد</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@700&family=Cairo:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --color-bg-main: #020408;
-            --color-bg-secondary: #0a101f;
-            --color-accent-gold: #ffb700; /* البرتقالي/الذهبي */
-            --color-accent-cyan: #00eaff; /* الأزرق السيان */
-            --color-text-primary: #ffffff;
-            --color-text-secondary: #94a3b8;
+            --bg-deep: #0f172a; /* كحلي فحمى راقي */
+            --bg-card: #1e293b;
+            --accent-cyan: #22d3ee;
+            --text-main: #f8fafc;
         }
 
         body {
-            font-family: 'Cairo', sans-serif;
-            background-color: var(--color-bg-main);
-            color: var(--color-text-primary);
-            overflow-x: hidden;
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--bg-deep);
+            color: var(--text-main);
+            line-height: 1.6;
         }
         
-        .handwritten { font-family: 'Aref Ruqaa', serif; }
-        
-        /* خلفية متوازنة */
-        .bg-hero-gradient {
-            background: radial-gradient(circle at top right, rgba(0, 234, 255, 0.1) 0%, transparent 50%),
-                        radial-gradient(circle at bottom left, rgba(255, 183, 0, 0.08) 0%, transparent 50%),
-                        var(--color-bg-main);
+        /* الخط اليدوي الانسيابي */
+        .handwritten { 
+            font-family: 'Aref Ruqaa', serif; 
+            letter-spacing: -1px;
         }
         
-        /* نصوص متوازنة */
-        .text-gold { color: var(--color-accent-gold); }
-        .text-cyan { color: var(--color-accent-cyan); }
-        /* تدرج يمزج بين اللونين للعناوين الرئيسية */
-        .text-gradient-balanced {
-            background: linear-gradient(to right, var(--color-accent-gold), var(--color-accent-cyan));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        /* أزرار متوازنة */
-        .btn-balanced {
-            background: linear-gradient(135deg, var(--color-accent-gold), var(--color-accent-cyan));
-            color: #000;
-            box-shadow: 0 4px 20px rgba(0, 234, 255, 0.2);
-            border: none;
-        }
-        .btn-balanced:hover {
-            box-shadow: 0 6px 25px rgba(255, 183, 0, 0.4);
-            transform: translateY(-2px);
-        }
-        .btn-outline-balanced {
-            background: transparent;
-            border: 2px solid var(--color-accent-cyan);
-            color: var(--color-accent-cyan);
-            transition: all 0.3s ease;
-        }
-        .btn-outline-balanced:hover {
-            background: rgba(0, 234, 255, 0.1);
-            border-color: var(--color-accent-gold);
-            color: var(--color-accent-gold);
+        /* الباترن اللي عجبك بشكل أخف */
+        .bg-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54.62 10.11L51.3 6.78c-.78-.78-2.05-.78-2.83 0l-1.41 1.41c-.78.78-.78 2.05 0 2.83l3.32 3.32-3.32 3.32c-.78.78-.78 2.05 0 2.83l1.41 1.41c.78.78 2.05.78 2.83 0l3.32-3.32 3.32 3.32c.78.78 2.05.78 2.83 0l1.41-1.41c.78-.78.78-2.05 0-2.83l-3.32-3.32 3.32-3.32c.78-.78.78-2.05 0-2.83l-1.41-1.41c-.78-.78-2.05-.78-2.83 0l-3.32 3.32z' fill='%23ffffff' fill-opacity='0.03'/%3E%3C/svg%3E");
         }
 
-        /* تبويبات متوازنة */
+        /* توازن الألوان في التبويبات */
         .nav-btn {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--color-accent-cyan); /* حدود زرقاء هادئة */
-            color: var(--color-text-secondary);
-            transition: all 0.3s ease;
-        }
-        .nav-btn:hover {
-            border-color: var(--color-accent-gold);
-            color: var(--color-text-primary);
+            @apply px-8 py-3 rounded-2xl font-bold transition-all border border-slate-700 text-slate-400 bg-slate-900/50;
         }
         .nav-btn.active {
-            background: linear-gradient(135deg, var(--color-accent-gold), var(--color-accent-cyan));
-            color: #000;
-            border: none;
-            box-shadow: 0 0 20px rgba(0, 234, 255, 0.3);
-            transform: scale(1.05);
-        }
-        /* تلوين الأيقونات داخل التبويبات */
-        .nav-btn i { color: var(--color-accent-cyan); transition: color 0.3s ease; }
-        .nav-btn:hover i { color: var(--color-accent-gold); }
-        .nav-btn.active i { color: #000; }
-
-        /* كروت متوازنة */
-        .pro-card {
-            background: linear-gradient(145deg, rgba(10, 16, 31, 0.8), rgba(2, 4, 8, 0.9));
-            border: 1px solid rgba(0, 234, 255, 0.2); /* حدود زرقاء خفيفة */
-            backdrop-filter: blur(10px);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-        .pro-card:hover {
-            border-color: var(--color-accent-gold); /* تتوهج بالبرتقالي عند التحويم */
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 183, 0, 0.1) inset;
-        }
-        /* أيقونات وأرقام داخل الكروت */
-        .card-icon-bg {
-            background: linear-gradient(135deg, rgba(255, 183, 0, 0.2), rgba(0, 234, 255, 0.2));
-            color: var(--color-accent-gold);
-            box-shadow: inset 0 0 10px rgba(255, 183, 0, 0.1);
-        }
-        .pro-card:hover .card-icon-bg {
-             background: linear-gradient(135deg, var(--color-accent-gold), var(--color-accent-cyan));
-             color: #000;
+            @apply border-cyan-400 text-cyan-400 bg-cyan-400/5 shadow-lg shadow-cyan-400/10;
         }
 
-        .tab-content { display: none; animation: fadeUp 0.6s ease forwards; }
-        .tab-content.active { display: block; }
-        @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        /* كروت بسيطة وجميلة */
+        .course-card {
+            @apply bg-slate-900/40 border border-slate-800 rounded-[32px] p-8 transition-all duration-500 hover:border-slate-600 hover:-translate-y-2;
+        }
+        
+        .tab-content { display: none; }
+        .tab-content.active { display: block; animation: fadeIn 0.8s ease; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     </style>
 </head>
-<body>
+<body class="bg-pattern">
 
-    <header class="bg-hero-gradient min-h-[90vh] relative overflow-hidden flex items-center">
-        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/dark-mosaic.png')] opacity-5 mix-blend-overlay"></div>
-        <div class="container mx-auto px-4 flex flex-col-reverse lg:flex-row items-center justify-between gap-12 relative z-10 py-20">
-            <div class="lg:w-1/2 text-center lg:text-right space-y-8">
-                <div>
-                    <h2 class="text-2xl md:text-3xl font-bold text-cyan mb-2">أهلاً بك يا بطل في</h2>
-                    <h1 class="text-6xl md:text-8xl font-black handwritten text-gradient-balanced mb-4 leading-tight drop-shadow-2xl">منصة الإنقاذ</h1>
-                    <p class="text-3xl md:text-4xl handwritten text-white">مع <span class="text-gold underline decoration-2 decoration-gold/50 underline-offset-8">الهندسجي</span> | فتحي سيد</p>
-                </div>
-                <p class="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium border-r-4 border-cyan/50 pr-6">
-                    مش مجرد منصة، دي خطتك للوصول للدرجة النهائية. شرح بيخاطب عقلك، تأسيس بيبني مستقبلك، ومتابعة بتضمن تفوقك.
+    <header class="min-h-[85vh] flex items-center relative py-12">
+        <div class="container mx-auto px-6 flex flex-col-reverse lg:flex-row items-center justify-between gap-16">
+            
+            <div class="lg:w-3/5 text-center lg:text-right">
+                <h2 class="text-cyan-400 font-bold mb-4 tracking-widest text-lg">أهلاً بك يا بطل في</h2>
+                <h1 class="text-6xl md:text-8xl handwritten text-white mb-6">منصة <span class="text-cyan-400">الإنقاذ</span></h1>
+                <p class="text-2xl md:text-3xl handwritten text-slate-300 mb-8">مع الهندسجي | فتحي سيد</p>
+                <p class="text-lg text-slate-400 max-w-2xl mx-auto lg:mx-0 leading-relaxed mb-10 font-medium">
+                    مش مجرد منصة، دي رفيقتك للوصول للدرجة النهائية. بنحول المعقد لسهل، وبنبني أساسك صح عشان تضمن مستقبلك.
                 </p>
-                <div class="flex flex-wrap justify-center lg:justify-start gap-6 pt-4">
-                    <button onclick="document.getElementById('nav-tabs').scrollIntoView(); showMainTab('emergency');" class="btn-balanced px-10 py-4 rounded-full font-black text-lg transition-all flex items-center gap-3 group">
-                        <span>ابدأ رحلة التفوق</span>
-                        <i class="fa-solid fa-arrow-left-long group-hover:-translate-x-2 transition-transform"></i>
-                    </button>
-                    <a href="https://youtube.com/@elhandasgey" target="_blank" class="btn-outline-balanced px-8 py-4 rounded-full font-bold transition-all flex items-center gap-3">
-                        <i class="fa-brands fa-youtube text-2xl"></i> قناتي الرسمية
-                    </a>
+                <div class="flex flex-wrap justify-center lg:justify-start gap-4">
+                    <button onclick="document.getElementById('nav-tabs').scrollIntoView();" class="bg-white text-slate-900 px-10 py-4 rounded-full font-black hover:bg-cyan-400 transition-colors shadow-xl">ابدأ رحلتك</button>
+                    <a href="https://youtube.com/@elhandasgey" target="_blank" class="border border-slate-700 text-white px-8 py-4 rounded-full font-bold hover:bg-slate-800 transition">اليوتيوب</a>
                 </div>
             </div>
-            <div class="lg:w-1/2 flex justify-center items-center relative">
-                <div class="relative z-20 w-full max-w-[500px]">
-                    <div class="absolute inset-0 bg-gradient-to-tr from-yellow-500/10 to-cyan-500/10 blur-3xl rounded-full scale-110 opacity-50 animate-pulse"></div>
-                    <div class="relative rounded-b-[40px] overflow-hidden border-b-2 border-cyan/30">
-                        <img src="https://avatars.githubusercontent.com/u/258786890?s=400&u=068e7b20038a66b4ed9da0cd84f6d7463f916677&v=4" alt="الهندسجي فتحي سيد" class="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700" style="mask-image: linear-gradient(to bottom, black 70%, transparent 100%); -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);">
-                    </div>
-                </div>
+            
+            <div class="lg:w-2/5 relative">
+                <div class="absolute inset-0 bg-cyan-400 blur-[120px] opacity-10 rounded-full"></div>
+                <img src="https://avatars.githubusercontent.com/u/258786890?s=400&u=068e7b20038a66b4ed9da0cd84f6d7463f916677&v=4" 
+                     alt="الهندسجي" 
+                     class="relative z-10 w-full max-w-sm mx-auto rounded-[40px] grayscale-[20%] hover:grayscale-0 transition-all duration-700 shadow-2xl"
+                     style="mask-image: linear-gradient(to bottom, black 85%, transparent 100%);">
             </div>
         </div>
     </header>
 
-    <div id="nav-tabs" class="bg-bg-secondary/50 backdrop-blur-xl border-y border-white/5 py-6 sticky top-0 z-50 shadow-2xl">
-        <nav class="container mx-auto flex flex-wrap justify-center gap-4 px-4">
-            <button onclick="showMainTab('emergency')" class="nav-btn active px-8 py-4 rounded-2xl font-black flex items-center gap-3"><i class="fa-solid fa-bolt-lightning text-xl"></i> ركن الطوارئ</button>
-            <button onclick="showMainTab('sec1')" class="nav-btn px-8 py-4 rounded-2xl font-black flex items-center gap-3"><i class="fa-solid fa-graduation-cap text-xl"></i> أولى ثانوي</button>
-            <button onclick="showMainTab('sec2')" class="nav-btn px-8 py-4 rounded-2xl font-black flex items-center gap-3"><i class="fa-solid fa-graduation-cap text-xl"></i> تانية ثانوي</button>
-        </nav>
-    </div>
+    <nav id="nav-tabs" class="sticky top-0 z-50 bg-slate-950/80 backdrop-blur-md border-y border-slate-800 py-6">
+        <div class="container mx-auto flex flex-wrap justify-center gap-4 px-4">
+            <button onclick="showTab('emergency')" class="nav-btn active">ركن الطوارئ 🚨</button>
+            <button onclick="showTab('sec1')" class="nav-btn">أولى ثانوي 🎓</button>
+            <button onclick="showTab('sec2')" class="nav-btn">تانية ثانوي 🎓</button>
+        </div>
+    </nav>
 
-    <main class="container mx-auto py-24 px-4">
+    <main class="container mx-auto py-24 px-6">
+        
         <div id="emergency" class="tab-content active">
             <div class="max-w-4xl mx-auto text-center mb-20">
-                <h2 class="text-5xl md:text-6xl font-black handwritten text-white mb-8">كورس التأسيس <span class="text-gradient-balanced">القوي</span> ⚡</h2>
-                <p class="text-xl text-slate-300 leading-relaxed font-medium mb-10 max-w-3xl mx-auto">
+                <h2 class="text-4xl md:text-5xl handwritten text-white mb-6">كورس التأسيس الشامل</h2>
+                <p class="text-slate-400 text-lg mb-10 leading-relaxed">
                     هنا هقدملك كل اللى محتاجه عشان تقدر تبدأ السنه صح مع زمايلك، كورس قوى، محتوى لذيذ، تقديم بشكل مختلف.
                 </p>
-                <a href="https://t.me/EL_HANDASGEY/134" target="_blank" class="btn-balanced inline-flex items-center gap-3 px-12 py-5 rounded-full font-black text-lg group">
-                    <i class="fa-solid fa-file-pdf text-2xl group-hover:rotate-12 transition-transform"></i>
-                    <span>تحميل ملف الكورس (PDF)</span>
+                <a href="https://t.me/EL_HANDASGEY/134" target="_blank" class="inline-flex items-center gap-3 border border-cyan-400/30 text-cyan-400 px-8 py-3 rounded-full font-bold hover:bg-cyan-400 hover:text-slate-900 transition-all">
+                    <i class="fa-solid fa-file-pdf"></i> تحميل ملف الكورس
                 </a>
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="pro-card p-8 rounded-[35px] flex flex-col relative overflow-hidden group">
-                    <div class="card-icon-bg w-16 h-16 rounded-2xl flex items-center justify-center mb-8 shadow-lg text-2xl font-bold relative z-10 transition-all"><i class="fa-solid fa-star"></i></div>
-                    <h3 class="text-2xl font-black mb-4 text-white">محتوى الكورس الشامل</h3>
-                    <p class="text-slate-400 font-medium mb-8 flex-grow">نظرة عامة على جميع الموضوعات الأساسية خطوة بخطوة من الصفر.</p>
-                    <a href="https://youtu.be/q-lqr5M1tns" target="_blank" class="w-full btn-outline-balanced py-4 rounded-2xl text-center font-black transition-all flex items-center justify-center gap-2 group-hover:gap-4">
-                        <span>شاهد الفيديو</span> <i class="fa-solid fa-play"></i>
-                    </a>
+                <div class="course-card">
+                    <span class="text-cyan-400 font-black text-sm block mb-4">مدخل الكورس</span>
+                    <h3 class="text-2xl font-bold mb-4">محتوى الكورس الشامل</h3>
+                    <p class="text-slate-500 text-sm mb-8">نظرة عامة على الموضوعات الأساسية من المجموعات للفترات والميل.</p>
+                    <a href="https://youtu.be/q-lqr5M1tns" target="_blank" class="block w-full text-center py-3 rounded-xl bg-slate-800 text-white font-bold hover:bg-cyan-400 hover:text-slate-900 transition">شاهد الفيديو</a>
                 </div>
 
-                <div class="pro-card p-8 rounded-[35px] flex flex-col relative overflow-hidden group">
-                    <div class="card-icon-bg w-16 h-16 rounded-2xl flex items-center justify-center mb-8 shadow-lg text-2xl font-bold relative z-10 transition-all">1</div>
-                    <h3 class="text-2xl font-black mb-4 text-white">الحصة الأولى</h3>
-                    <p class="text-slate-400 font-medium mb-8 flex-grow">مجموعة العنصر، أنواع الفترات، ومجاميع الأعداد والمقادير الجبرية.</p>
-                    <a href="https://youtu.be/7AQL2wA-fTw" target="_blank" class="w-full btn-outline-balanced py-4 rounded-2xl text-center font-black transition-all flex items-center justify-center gap-2 group-hover:gap-4">
-                        <span>ابدأ الآن</span> <i class="fa-solid fa-arrow-left"></i>
-                    </a>
+                <div class="course-card">
+                    <span class="text-cyan-400 font-black text-sm block mb-4">الحصة 01</span>
+                    <h3 class="text-2xl font-bold mb-4">مجموعات الأعداد</h3>
+                    <p class="text-slate-500 text-sm mb-8">مفهوم المجموعة والعنصر، أنواع الفترات، والتعامل مع المقادير الجبرية.</p>
+                    <a href="https://youtu.be/7AQL2wA-fTw" target="_blank" class="block w-full text-center py-3 rounded-xl bg-slate-800 text-white font-bold hover:bg-cyan-400 hover:text-slate-900 transition">ابدأ الدرس</a>
                 </div>
 
-                <div class="pro-card p-8 rounded-[35px] flex flex-col relative overflow-hidden group">
-                    <div class="card-icon-bg w-16 h-16 rounded-2xl flex items-center justify-center mb-8 shadow-lg text-2xl font-bold relative z-10 transition-all">2</div>
-                    <h3 class="text-2xl font-black mb-4 text-white">الحصة الثانية</h3>
-                    <p class="text-slate-400 font-medium mb-8 flex-grow">الأسس وخواصها، اللوغاريتمات، والتحليل بأنواعه (عقدة الطلبة).</p>
-                    <a href="https://youtu.be/sC1p-lo_tY4" target="_blank" class="w-full btn-outline-balanced py-4 rounded-2xl text-center font-black transition-all flex items-center justify-center gap-2 group-hover:gap-4">
-                        <span>ابدأ الآن</span> <i class="fa-solid fa-arrow-left"></i>
-                    </a>
+                <div class="course-card">
+                    <span class="text-cyan-400 font-black text-sm block mb-4">الحصة 02</span>
+                    <h3 class="text-2xl font-bold mb-4">الأسس والتحليل</h3>
+                    <p class="text-slate-500 text-sm mb-8">خواص الأسس، اللوغاريتمات، وأهم موضوع بيلخبط الطلبة: التحليل بأنواعه.</p>
+                    <a href="https://youtu.be/sC1p-lo_tY4" target="_blank" class="block w-full text-center py-3 rounded-xl bg-slate-800 text-white font-bold hover:bg-cyan-400 hover:text-slate-900 transition">ابدأ الدرس</a>
                 </div>
 
-                <div class="pro-card p-8 rounded-[35px] flex flex-col relative overflow-hidden group">
-                    <div class="card-icon-bg w-16 h-16 rounded-2xl flex items-center justify-center mb-8 shadow-lg text-2xl font-bold relative z-10 transition-all">3</div>
-                    <h3 class="text-2xl font-black mb-4 text-white">الحصة الثالثة</h3>
-                    <p class="text-slate-400 font-medium mb-8 flex-grow">المعادلات والمتباينات، الميل والعلاقات الطردية والعكسية (فيزياء).</p>
-                    <a href="https://youtu.be/CoGVFPKUrf8" target="_blank" class="w-full btn-outline-balanced py-4 rounded-2xl text-center font-black transition-all flex items-center justify-center gap-2 group-hover:gap-4">
-                        <span>ابدأ الآن</span> <i class="fa-solid fa-arrow-left"></i>
-                    </a>
+                <div class="course-card">
+                    <span class="text-cyan-400 font-black text-sm block mb-4">الحصة 03</span>
+                    <h3 class="text-2xl font-bold mb-4">المعادلات والميل</h3>
+                    <p class="text-slate-500 text-sm mb-8">حل المتباينات والمعادلات، والميل والعلاقات الطردية والعكسية (أساس الفيزياء).</p>
+                    <a href="https://youtu.be/CoGVFPKUrf8" target="_blank" class="block w-full text-center py-3 rounded-xl bg-slate-800 text-white font-bold hover:bg-cyan-400 hover:text-slate-900 transition">ابدأ الدرس</a>
                 </div>
 
-                <div class="pro-card p-8 rounded-[35px] flex flex-col relative overflow-hidden group">
-                    <div class="card-icon-bg w-16 h-16 rounded-2xl flex items-center justify-center mb-8 shadow-lg text-2xl font-bold relative z-10 transition-all">4</div>
-                    <h3 class="text-2xl font-black mb-4 text-white">الحصة الرابعة</h3>
-                    <p class="text-slate-400 font-medium mb-8 flex-grow">الخطوط وأنواعها، معادلة الخط المستقيم، الدوال والمجال.</p>
-                    <a href="https://youtu.be/bqUnE_lIkUc" target="_blank" class="w-full btn-outline-balanced py-4 rounded-2xl text-center font-black transition-all flex items-center justify-center gap-2 group-hover:gap-4">
-                        <span>ابدأ الآن</span> <i class="fa-solid fa-arrow-left"></i>
-                    </a>
+                <div class="course-card">
+                    <span class="text-cyan-400 font-black text-sm block mb-4">الحصة 04</span>
+                    <h3 class="text-2xl font-bold mb-4">معادلة المستقيم</h3>
+                    <p class="text-slate-500 text-sm mb-8">أنواع الخطوط، إيجاد معادلة الخط المستقيم، ومفهوم الدوال والمجال.</p>
+                    <a href="https://youtu.be/bqUnE_lIkUc" target="_blank" class="block w-full text-center py-3 rounded-xl bg-slate-800 text-white font-bold hover:bg-cyan-400 hover:text-slate-900 transition">ابدأ الدرس</a>
                 </div>
 
-                <div class="pro-card p-8 rounded-[35px] flex flex-col relative overflow-hidden group">
-                    <div class="card-icon-bg w-16 h-16 rounded-2xl flex items-center justify-center mb-8 shadow-lg text-2xl font-bold relative z-10 transition-all">5</div>
-                    <h3 class="text-2xl font-black mb-4 text-white">الحصة الخامسة</h3>
-                    <p class="text-slate-400 font-medium mb-8 flex-grow">شرح شامل ومفصل لجميع أساسيات حساب المثلثات وقوانينه.</p>
-                    <a href="https://youtu.be/OPjs4wvkExA" target="_blank" class="w-full btn-outline-balanced py-4 rounded-2xl text-center font-black transition-all flex items-center justify-center gap-2 group-hover:gap-4">
-                        <span>ابدأ الآن</span> <i class="fa-solid fa-arrow-left"></i>
-                    </a>
+                <div class="course-card">
+                    <span class="text-cyan-400 font-black text-sm block mb-4">الحصة 05</span>
+                    <h3 class="text-2xl font-bold mb-4">حساب المثلثات</h3>
+                    <p class="text-slate-500 text-sm mb-8">شرح مفصل لجميع قوانين وأساسيات حساب المثلثات من البداية للنهاية.</p>
+                    <a href="https://youtu.be/OPjs4wvkExA" target="_blank" class="block w-full text-center py-3 rounded-xl bg-slate-800 text-white font-bold hover:bg-cyan-400 hover:text-slate-900 transition">ابدأ الدرس</a>
                 </div>
 
-                <div class="pro-card p-8 rounded-[35px] flex flex-col relative overflow-hidden group">
-                    <div class="card-icon-bg w-16 h-16 rounded-2xl flex items-center justify-center mb-8 shadow-lg text-2xl font-bold relative z-10 transition-all">6</div>
-                    <h3 class="text-2xl font-black mb-4 text-white">الحصة السادسة</h3>
-                    <p class="text-slate-400 font-medium mb-8 flex-grow">كلام مركز جداً عن أساسيات الهندسة والهندسة الفراغية من الصفر.</p>
-                    <a href="https://youtu.be/PJrXRGs7mM4" target="_blank" class="w-full btn-outline-balanced py-4 rounded-2xl text-center font-black transition-all flex items-center justify-center gap-2 group-hover:gap-4">
-                        <span>ابدأ الآن</span> <i class="fa-solid fa-arrow-left"></i>
-                    </a>
+                <div class="course-card">
+                    <span class="text-cyan-400 font-black text-sm block mb-4">الحصة 06</span>
+                    <h3 class="text-2xl font-bold mb-4">أساسيات الهندسة</h3>
+                    <p class="text-slate-500 text-sm mb-8">شرح مركز لأساسيات الهندسة والهندسة الفراغية من الصفر.</p>
+                    <a href="https://youtu.be/PJrXRGs7mM4" target="_blank" class="block w-full text-center py-3 rounded-xl bg-slate-800 text-white font-bold hover:bg-cyan-400 hover:text-slate-900 transition">ابدأ الدرس</a>
                 </div>
             </div>
         </div>
 
-        <div id="sec1" class="tab-content"><div class="text-center py-20"><h2 class="text-4xl handwritten text-cyan">جاري تجهيز منهج أولى ثانوي..</h2></div></div>
-        <div id="sec2" class="tab-content"><div class="text-center py-20"><h2 class="text-4xl handwritten text-gold">جاري تجهيز منهج تانية ثانوي..</h2></div></div>
+        <div id="sec1" class="tab-content text-center py-20">
+            <h2 class="text-4xl handwritten text-cyan-400 mb-4">أولى ثانوي</h2>
+            <p class="text-slate-500">جاري تجهيز محتوى الترم الثاني.. انتظروا المفاجأة!</p>
+        </div>
+        
+        <div id="sec2" class="tab-content text-center py-20">
+            <h2 class="text-4xl handwritten text-cyan-400 mb-4">تانية ثانوي</h2>
+            <p class="text-slate-500">جاري تجهيز محتوى الترم الثاني.. أقوى شرح في مصر!</p>
+        </div>
+
     </main>
 
-    <footer class="bg-bg-secondary py-16 border-t border-cyan/30 text-center relative overflow-hidden">
-        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5 mix-blend-overlay"></div>
-        <h4 class="handwritten text-4xl text-gradient-balanced mb-10 relative z-10">منصة الإنقاذ | الهندسجي</h4>
-        <div class="flex justify-center gap-12 text-4xl mb-12 relative z-10">
-            <a href="https://youtube.com/@elhandasgey" target="_blank" class="text-slate-500 hover:text-red-600 transition transform hover:scale-110"><i class="fa-brands fa-youtube"></i></a>
-            <a href="https://t.me/EL_HANDASGEY" target="_blank" class="text-slate-500 hover:text-cyan-400 transition transform hover:scale-110"><i class="fa-brands fa-telegram"></i></a>
+    <footer class="bg-slate-950 py-20 border-t border-slate-900 text-center">
+        <h4 class="handwritten text-4xl text-white mb-8">منصة الإنقاذ | الهندسجي</h4>
+        <div class="flex justify-center gap-8 text-3xl mb-12">
+            <a href="https://youtube.com/@elhandasgey" target="_blank" class="text-slate-600 hover:text-red-500 transition"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://t.me/EL_HANDASGEY" target="_blank" class="text-slate-600 hover:text-cyan-400 transition"><i class="fa-brands fa-telegram"></i></a>
         </div>
-        <p class="text-slate-600 text-sm relative z-10">جميع الحقوق محفوظة للهندسجي فتحي سيد © 2026</p>
+        <p class="text-slate-700 text-sm">جميع الحقوق محفوظة للهندسجي فتحي سيد © 2026</p>
     </footer>
 
     <script>
-        function showMainTab(tabId) {
-            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
-            document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+        function showTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
             document.getElementById(tabId).classList.add('active');
-            const targetBtn = document.querySelector(`button[onclick*="'${tabId}'"]`);
-            if (targetBtn) targetBtn.classList.add('active');
+            event.currentTarget.classList.add('active');
             window.scrollTo({ top: document.getElementById('nav-tabs').offsetTop - 20, behavior: 'smooth' });
         }
     </script>
