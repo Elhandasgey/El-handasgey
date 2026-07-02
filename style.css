@@ -2134,7 +2134,6 @@ body.dark-mode .super-card {
     display: block !important;
     margin: 0 !important;
     padding: 0 !important;
-    vertical-align: bottom !important;
     filter: drop-shadow(0 -10px 28px rgba(0, 0, 0, 0.35)) !important;
 }
 
