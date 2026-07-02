@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="منصة المهندسجي - الصف الثالث الثانوي. معسكر الرياضيات للثانوية العامة (أزهر وعام) مع مستر فتحي سيد.">
+    <meta name="author" content="مستر فتحي سيد">
+    <title>الصف الثالث الثانوي | منصة المهندسجي</title>
+    <meta name="theme-color" content="#111827">
+    <link rel="icon" href="logo.png" type="image/png" sizes="32x32">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="sec3-style.css">
+</head>
+
+<body class="dark-mode">
+
+    <!-- Top Toolbar -->
+    <div class="top-toolbar" role="toolbar">
+        <div class="toolbar-container">
+            <a href="index.html" class="back-btn" style="margin-bottom:0; min-height:auto; padding:6px 14px; font-size:0.9rem;">
+                <i class="fa-solid fa-home"></i> الرئيسية
+            </a>
+            <button class="dark-mode-toggle" onclick="toggleDarkMode()">
+                <i class="fa-solid fa-sun" id="darkModeIcon"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="course-header-bg sec3-header">
+        <div class="header-content">
+            <div class="sec3-hero-layout">
+
+                <!-- النص (يمين) -->
+                <div class="hero-text-side">
+                    <span class="vip-badge">
+                        <i class="fa-solid fa-crown"></i> VIP — دفعة 2026
+                    </span>
+
+                    <h1 class="sec3-hero-heading">
+                        رياضيات الصف<br>
+                        <span class="highlight-gold">الثالث الثانوي (أزهر وعام)</span>
+                    </h1>
+
+                    <p class="course-description" style="color:rgba(255,255,255,0.72); max-width:480px;">
+                        معسكر الثانوية العامة الشامل. ذاكر المنهج متقسم <strong style="color:#f1c40f;">بالفروع</strong> عشان تقدر تتابع جدولك وتلم أبواب الرياضيات البحتة والتطبيقية بأعلى كفاءة.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a href="#courses" class="btn-gold-hero">
+                            <i class="fa-solid fa-compass" style="margin-left:6px;"></i> ابدأ المذاكرة
+                        </a>
+                        <a href="https://youtube.com/@elhandasgey" target="_blank" class="btn-ghost-sec3">
+                            <i class="fa-brands fa-youtube" style="color:#ff0000; margin-left:5px;"></i> قناتنا
+                        </a>
+                    </div>
+
+                    <div class="hero-features-row">
+                        <span><i class="fa-solid fa-circle-check" style="color:#f1c40f;"></i> متابعة مستمرة</span>
+                        <span><i class="fa-solid fa-circle-check" style="color:#f1c40f;"></i> حل مكثف</span>
+                        <span><i class="fa-solid fa-circle-check" style="color:#f1c40f;"></i> ضمان التفوق</span>
+                    </div>
+                </div>
+
+                <!-- الصورة (شمال) -->
+                <div class="hero-image-side">
+                    <!-- يرجى تعديل مسار الصورة لتناسب صورتك الشخصية -->
+                    <img src="images/cover_2027.png" alt="مستر فتحي سيد" class="hero-personal-img">
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <main class="main-container" id="courses">
+        <section class="content-column">
+
+            <!-- Progress Bar -->
+            <div class="progress-section">
+                <div class="progress-info">
+                    <h3 class="progress-title-gold">تقدمك في فروع الرياضيات</h3>
+                    <span id="progressText"></span>
+                </div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" id="progressBar" style="background:linear-gradient(90deg,#f1c40f,#d4af37);"></div>
+                </div>
+            </div>
+
+            <!-- Toggle Switch (بحتة / تطبيقية) -->
+            <div class="view-toggle-container" id="viewToggleContainer">
+                <div class="view-toggle">
+                    <button class="toggle-btn active" id="pure-btn" onclick="switchView('pure')">
+                        <i class="fa-solid fa-square-root-variable" style="margin-left:6px;"></i> الرياضيات البحتة
+                    </button>
+                    <button class="toggle-btn" id="applied-btn" onclick="switchView('applied')">
+                        <i class="fa-solid fa-rocket" style="margin-left:6px;"></i> الرياضيات التطبيقية
+                    </button>
+                </div>
+            </div>
+
+            <!-- زرار رجوع -->
+            <button id="sec3BackBtn" class="back-btn is-hidden" onclick="goHomeSec3()" hidden>
+                <i class="fa-solid fa-arrow-right"></i> رجوع للفروع
+            </button>
+
+            <!-- ── PURE MATH VIEW (الرياضيات البحتة) ── -->
+            <div id="pure-view" class="dashboard-grid">
+                <div class="dash-card gold-card" onclick="openSec3Category('solid-geo')" role="button" tabindex="0">
+                    <div class="dash-icon gold-icon"><i class="fa-solid fa-cubes"></i></div>
+                    <h3>الهندسة الفراغية</h3>
+                    <p>الهندسة والقياس في ثلاثة أبعاد والخط المستقيم والمستوى.</p>
+                </div>
+                
+                <div class="dash-card gold-card" onclick="openSec3Category('algebra')" role="button" tabindex="0">
+                    <div class="dash-icon gold-icon"><i class="fa-solid fa-subscript"></i></div>
+                    <h3>الجبر</h3>
+                    <p>التباديل والتوافيق، الأعداد المركبة، والمحددات والمصفوفات.</p>
+                </div>
+
+                
+
+                <div class="dash-card gold-card" onclick="openSec3Category('differentiation')" role="button" tabindex="0">
+                    <div class="dash-icon gold-icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <h3>التفاضل</h3>
+                    <p>الاشتقاق وتطبيقاته وسلوك الدالة ورسم المنحنيات.</p>
+                </div>
+
+                <div class="dash-card gold-card" onclick="openSec3Category('integration')" role="button" tabindex="0">
+                    <div class="dash-icon gold-icon"><i class="fa-solid fa-chart-area"></i></div>
+                    <h3>التكامل</h3>
+                    <p>طرق التكامل والتكامل المحدد والمساحات والحجوم.</p>
+                </div>
+
+            </div>
+
+            <!-- ── APPLIED MATH VIEW (الرياضيات التطبيقية) ── -->
+            <div id="applied-view" class="dashboard-grid is-hidden" hidden>
+
+                <div class="dash-card gold-card" onclick="openSec3Category('statics')" role="button" tabindex="0">
+                    <div class="dash-icon gold-icon"><i class="fa-solid fa-weight-hanging"></i></div>
+                    <h3>الاستاتيكا</h3>
+                    <p>الاحتكاك، العزوم، القوى المتوازية، والاتزان العام، ومركز الثقل.</p>
+                </div>
+
+                <div class="dash-card gold-card" onclick="openSec3Category('dynamics')" role="button" tabindex="0">
+                    <div class="dash-icon gold-icon"><i class="fa-solid fa-person-running"></i></div>
+                    <h3>الديناميكا</h3>
+                    <p>الحركة، قوانين نيوتن، الدفع والتصادم، الشغل والطاقة والقدرة.</p>
+                </div>
+
+            </div>
+
+            <!-- ══════════════════════════════════════
+                 LECTURE CARDS (عينات للمحاضرات داخل الفروع)
+                 ══════════════════════════════════════ -->
+
+            <!-- عينة: فرع الجبر -->
+            <article class="task-card is-hidden" data-tags="algebra" hidden>
+                <div class="task-header" onclick="toggleTask(this)">
+                    <div class="task-checkbox">
+                        <input type="checkbox" id="math-alg-l1" onchange="updateProgress()" class="lecture-checkbox">
+                        <label for="math-alg-l1" class="checkbox-label"></label>
+                    </div>
+                    <div class="task-info">
+                        <div class="task-title">المحاضرة الأولى: مبدأ العد ومضروب العدد</div>
+                        <div class="task-details">أساسيات التباديل والتوافيق وقوانين مبدأ العد</div>
+                    </div>
+                    <div class="task-icons"><i class="fa-solid fa-chevron-down toggle-icon"></i></div>
+                </div>
+                <div class="task-content">
+                    <div class="task-body">
+                        <a href="#" target="_blank" class="part-item">
+                            <span class="part-title"><i class="fa-solid fa-play" style="color:var(--color-primary);margin-left:8px;"></i> فيديو الشرح</span>
+                            <span class="view-btn">عرض <i class="fa-solid fa-chevron-left btn-icon"></i></span>
+                        </a>
+                        <a href="#" target="_blank" class="part-item">
+                            <span class="part-title"><i class="fa-solid fa-pen-to-square" style="color:#d4af37;margin-left:8px;"></i> حل الواجب (كتاب المعاصر)</span>
+                            <span class="view-btn">عرض <i class="fa-solid fa-chevron-left btn-icon"></i></span>
+                        </a>
+                        <a href="#" target="_blank" class="part-item">
+                            <span class="part-title"><i class="fa-solid fa-file-pdf" style="color:#e74c3c;margin-left:8px;"></i> ملزمة الشرح (PDF)</span>
+                            <span class="view-btn">تحميل <i class="fa-solid fa-download btn-icon"></i></span>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- عينة: فرع الاستاتيكا -->
+            <article class="task-card is-hidden" data-tags="statics" hidden>
+                <div class="task-header" onclick="toggleTask(this)">
+                    <div class="task-checkbox">
+                        <input type="checkbox" id="math-stat-l1" onchange="updateProgress()" class="lecture-checkbox">
+                        <label for="math-stat-l1" class="checkbox-label"></label>
+                    </div>
+                    <div class="task-info">
+                        <div class="task-title">المحاضرة الأولى: الاحتكاك على مستوى أفقي خشن</div>
+                        <div class="task-details">مفهوم قوة الاحتكاك السكوني والحركي وقوة الرد الفعل المحصل</div>
+                    </div>
+                    <div class="task-icons"><i class="fa-solid fa-chevron-down toggle-icon"></i></div>
+                </div>
+                <div class="task-content">
+                    <div class="task-body">
+                        <a href="#" target="_blank" class="part-item">
+                            <span class="part-title"><i class="fa-solid fa-play" style="color:var(--color-primary);margin-left:8px;"></i> فيديو الشرح</span>
+                            <span class="view-btn">عرض <i class="fa-solid fa-chevron-left btn-icon"></i></span>
+                        </a>
+                        <a href="#" class="part-item gold-quiz-item">
+                            <span class="part-title"><i class="fa-solid fa-clock" style="color:#d4af37;margin-left:8px;"></i> كويز على الاحتكاك</span>
+                            <span class="view-btn">ابدأ <i class="fa-solid fa-chevron-left btn-icon"></i></span>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- عينة: فرع التفاضل -->
+            <article class="task-card is-hidden" data-tags="differentiation" hidden>
+                <div class="task-header" onclick="toggleTask(this)">
+                    <div class="task-checkbox">
+                        <input type="checkbox" id="math-diff-l1" onchange="updateProgress()" class="lecture-checkbox">
+                        <label for="math-diff-l1" class="checkbox-label"></label>
+                    </div>
+                    <div class="task-info">
+                        <div class="task-title">المحاضرة الأولى: اشتقاق الدوال المثلثية</div>
+                        <div class="task-details">مراجعة قواعد الاشتقاق ومشتقات القا والقتا والظتا</div>
+                    </div>
+                    <div class="task-icons"><i class="fa-solid fa-chevron-down toggle-icon"></i></div>
+                </div>
+                <div class="task-content">
+                    <div class="task-body">
+                        <a href="#" target="_blank" class="part-item">
+                            <span class="part-title"><i class="fa-solid fa-play" style="color:var(--color-primary);margin-left:8px;"></i> فيديو الشرح</span>
+                            <span class="view-btn">عرض <i class="fa-solid fa-chevron-left btn-icon"></i></span>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+        </section>
+
+        <!-- Sidebar -->
+        <aside class="sidebar-card portal-hero-sidebar">
+            <img src="images/3am_revision.jpg" alt="غلاف كورس 3ث" class="card-image" style="border-bottom:2px solid #d4af37;">
+            <div class="card-body">
+                <a href="#" class="free-btn gold-free-btn">
+                    <i class="fa-solid fa-crown" style="margin-left:8px;"></i> مسار الثانوية العامة للرياضيات
+                </a>
+            </div>
+        </aside>
+
+    </main>
+
+    <!-- Social Icons -->
+    <nav class="social-icons" aria-label="روابط التواصل الاجتماعي">
+        <a href="https://wa.me/+201142818780" target="_blank" class="social-icon whatsapp-personal with-text" title="تواصل عبر واتساب">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span class="icon-text">الدعم</span>
+        </a>
+        <a href="https://t.me/EL_HANDASGEY" target="_blank" class="social-icon telegram" title="قناة تليجرام">
+            <i class="fa-brands fa-telegram"></i>
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=61555577926776" target="_blank" class="social-icon facebook" title="صفحة فيسبوك">
+            <i class="fa-brands fa-facebook-f"></i>
+        </a>
+    </nav>
+
+    <script src="script.js"></script>
+    <script>
+        // دالة تبديل العرض بين الرياضيات البحتة والتطبيقية
+        function switchView(viewType) {
+            ['pure-view','applied-view'].forEach(function(id){
+                document.getElementById(id).classList.add('is-hidden');
+                document.getElementById(id).hidden = true;
+            });
+            ['pure-btn','applied-btn'].forEach(function(id){
+                document.getElementById(id).classList.remove('active');
+            });
+            var target = document.getElementById(viewType + '-view');
+            target.hidden = false;
+            target.classList.remove('is-hidden');
+            target.classList.add('anim-fade-in');
+            document.getElementById(viewType + '-btn').classList.add('active');
+        }
+
+        // دالة فتح الفرع وعرض المحاضرات الخاصة به
+        function openSec3Category(tag) {
+            ['pure-view','applied-view'].forEach(function(id){
+                document.getElementById(id).hidden = true;
+                document.getElementById(id).classList.add('is-hidden');
+            });
+            document.getElementById('viewToggleContainer').classList.add('is-hidden');
+            var backBtn = document.getElementById('sec3BackBtn');
+            backBtn.hidden = false;
+            backBtn.classList.remove('is-hidden');
+
+            document.querySelectorAll('.task-card').forEach(function(card) {
+                var tags = card.getAttribute('data-tags') || '';
+                if (tags.includes(tag)) {
+                    card.hidden = false;
+                    card.classList.remove('is-hidden');
+                    card.classList.add('anim-fade-in');
+                } else {
+                    card.hidden = true;
+                    card.classList.add('is-hidden');
+                }
+            });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // دالة الرجوع لقائمة الفروع
+        function goHomeSec3() {
+            document.querySelectorAll('.task-card').forEach(function(card) {
+                card.hidden = true;
+                card.classList.add('is-hidden');
+            });
+            document.getElementById('sec3BackBtn').hidden = true;
+            document.getElementById('sec3BackBtn').classList.add('is-hidden');
+            document.getElementById('viewToggleContainer').classList.remove('is-hidden');
+            var activeView = document.getElementById('pure-btn').classList.contains('active') ? 'pure-view' : 'applied-view';
+            var viewEl = document.getElementById(activeView);
+            viewEl.hidden = false;
+            viewEl.classList.remove('is-hidden');
+            viewEl.classList.add('anim-fade-in');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
